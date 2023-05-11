@@ -28,6 +28,10 @@ router.get("/biodata", (req, res) => {
   res.send(biodata);
 });
 
+router.use(express.json());
+
+router.use(express.urlencoded({ extended: true }));
+
 router.post("/biodata", (req, res) => {
   const nama = req.body.nama;
   const tempatLahir = req.body["tempat-lahir"];
